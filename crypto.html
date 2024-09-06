@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Management - APIX Bank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e8b57; /* Dark green */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .crypto-list {
+            margin: 20px 0;
+        }
+        .crypto-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .crypto-list table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .chart-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <!-- Include the Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Cryptocurrency Management</h1>
+
+    <div class="crypto-list">
+        <h2>Cryptocurrency Portfolio</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cryptocurrency</th>
+                    <th>Quantity</th>
+                    <th>Current Value (EUR)</th>
+                    <th>Total Value (EUR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bitcoin (BTC)</td>
+                    <td>4.0</td>
+                    <td>€25,000</td>
+                    <td>€100,000</td>
+                </tr>
+                <tr>
+                    <td>Ethereum (ETH)</td>
+                    <td>15.0</td>
+                    <td>€1,800</td>
+                    <td>€27,000</td>
+                </tr>
+                <tr>
+                    <td>Ripple (XRP)</td>
+                    <td>30,000.0</td>
+                    <td>€0.50</td>
+                    <td>€15,000</td>
+                </tr>
+                <tr>
+                    <td>Litecoin (LTC)</td>
+                    <td>500.0</td>
+                    <td>€100</td>
+                    <td>€50,000</td>
+                </tr>
+                <tr>
+                    <td>Cardano (ADA)</td>
+                    <td>60,000.0</td>
+                    <td>€0.30</td>
+                    <td>€18,000</td>
+                </tr>
+                <tr>
+                    <td>Polkadot (DOT)</td>
+                    <td>8,000.0</td>
+                    <td>€5</td>
+                    <td>€40,000</td>
+                </tr>
+                <tr>
+                    <td>Binance Coin (BNB)</td>
+                    <td>300.0</td>
+                    <td>€220</td>
+                    <td>€66,000</td>
+                </tr>
+                <tr>
+                    <td>Chainlink (LINK)</td>
+                    <td>4,000.0</td>
+                    <td>€10</td>
+                    <td>€40,000</td>
+                </tr>
+                <tr>
+                    <td>Stellar (XLM)</td>
+                    <td>100,000.0</td>
+                    <td>€0.10</td>
+                    <td>€10,000</td>
+                </tr>
+                <tr>
+                    <td>Dogecoin (DOGE)</td>
+                    <td>500,000.0</td>
+                    <td>€0.05</td>
+                    <td>€25,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="chart-container">
+        <h2>Cryptocurrency Value Trend</h2>
+        <canvas id="cryptoChart"></canvas>
+    </div>
+
+    <div class="actions">
+        <a href="account.html" class="button">Back to Account</a>
+        <a href="account_statement.html" class="button">View Statement</a>
+        <a href="credit_card.html" class="button">Manage Credit Card</a>
+    </div>
+</div>
+
+<script>
+    const ctx = document.getElementById('cryptoChart').getContext('2d');
+    const cryptoChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [{
+                label: 'Value in EUR',
+                data: [1.8, 2.0, 1.9, 2.2, 2.1, 2.3],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2,
+                fill: true,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    beginAtZero: true
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
+

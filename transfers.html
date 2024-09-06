@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Management - APIX Bank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e8b57; /* Dark Green */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .transfer-form {
+            margin: 20px 0;
+        }
+        .transfer-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .transfer-form input, .transfer-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .transfer-history {
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .actions .button {
+            display: inline-block;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Stylized title for transfer management -->
+    <h1>Transfer Management</h1>
+
+    <div class="transfer-form">
+        <h2>Make a New Transfer</h2>
+        <form>
+            <label for="beneficiary-name">Beneficiary Name:</label>
+            <input id="beneficiary-name" name="beneficiary-name" required="" type="text" />
+
+            <label for="iban">Beneficiary IBAN:</label>
+            <input id="iban" name="iban" required="" type="text" />
+
+            <label for="amount">Amount (&euro;):</label>
+            <input id="amount" name="amount" required="" type="number" />
+
+            <label for="reason">Reason:</label>
+            <input id="reason" name="reason" required="" type="text" />
+
+            <label for="date">Transfer Date:</label>
+            <input id="date" name="date" required="" type="date" />
+
+            <input class="button" type="submit" value="Make Transfer" />
+        </form>
+    </div>
+
+    <div class="transfer-history">
+        <h2>Transfer History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Beneficiary</th>
+                    <th>IBAN</th>
+                    <th>Amount (&euro;)</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>07/10/2024</td>
+                    <td>Costruzioni Barche SPA</td>
+                    <td>IT60X0542811101000000123456</td>
+                    <td>&euro;500,000</td>
+                    <td>Boat Purchase</td>
+                </tr>
+                <tr>
+                    <td>07/15/2024</td>
+                    <td>Errademanti Constructions</td>
+                    <td>IT60Y0542811101000000123457</td>
+                    <td>&euro;1,200,000</td>
+                    <td>Renovation Work</td>
+                </tr>
+                <tr>
+                    <td>07/22/2024</td>
+                    <td>Samsung Italy</td>
+                    <td>IT60Z0542811101000000123458</td>
+                    <td>&euro;2,500</td>
+                    <td>Samsung Fridge Purchase</td>
+                </tr>
+                <tr>
+                    <td>07/25/2024</td>
+                    <td>Frigoriferi Italia SRL</td>
+                    <td>IT60W0542811101000000123459</td>
+                    <td>&euro;3,000</td>
+                    <td>Washing Machine Purchase</td>
+                </tr>
+                <tr>
+                    <td>08/01/2024</td>
+                    <td>Mortgage</td>
+                    <td>IT60V0542811101000000123460</td>
+                    <td>&euro;50,000</td>
+                    <td>Monthly Mortgage Payment</td>
+                </tr>
+                <tr>
+                    <td>08/05/2024</td>
+                    <td>Material Supply</td>
+                    <td>IT60U0542811101000000123461</td>
+                    <td>&euro;100,000</td>
+                    <td>Construction Materials</td>
+                </tr>
+                <tr>
+                    <td>08/20/2024</td>
+                    <td>Samsung Italy</td>
+                    <td>IT60T0542811101000000123462</td>
+                    <td>&euro;2,000</td>
+                    <td>Samsung Dishwasher Purchase</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="actions">
+        <a class="button" href="account.html">Back to Account</a>
+        <a class="button" href="account_statement.html">View Account Statement</a>
+        <a class="button" href="crypto.html">Manage Cryptocurrencies</a>
+        <a class="button" href="credit_card.html">Manage Credit Card</a>
+    </div>
+
+</div>
+</body>
+</html>
+

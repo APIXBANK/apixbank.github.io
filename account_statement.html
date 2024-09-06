@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Statement - Alessandro Moratti Smith</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e8b57; /* Dark green */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .title-bar {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 16px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Stylized title bar -->
+    <div class="title-bar">
+        Account Statement - Alessandro Moratti Smith
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Deposits -->
+            <tr>
+                <td>07/01/2024</td>
+                <td>Deposit from Santa Monica America Bank</td>
+                <td>+ &euro;500,000</td>
+                <td>&euro;3,000,000</td>
+            </tr>
+            <tr>
+                <td>07/10/2024</td>
+                <td>Deposit from Costruzioni Barche SPA, Liguria</td>
+                <td>+ &euro;1,000,000</td>
+                <td>&euro;3,500,000</td>
+            </tr>
+            <!-- Transfers -->
+            <tr>
+                <td>07/15/2024</td>
+                <td>Transfer to Errademanti Constructions</td>
+                <td>- &euro;1,200,000</td>
+                <td>&euro;2,300,000</td>
+            </tr>
+            <tr>
+                <td>07/22/2024</td>
+                <td>Transfer to Frigoriferi Italia SRL</td>
+                <td>- &euro;300,000</td>
+                <td>&euro;2,000,000</td>
+            </tr>
+            <!-- Payments -->
+            <tr>
+                <td>08/01/2024</td>
+                <td>Monthly Mortgage Payment</td>
+                <td>- &euro;50,000</td>
+                <td>&euro;1,950,000</td>
+            </tr>
+            <tr>
+                <td>08/05/2024</td>
+                <td>Payment for Material Supply</td>
+                <td>- &euro;100,000</td>
+                <td>&euro;1,850,000</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="actions">
+        <a class="button" href="account.html">Back to Account</a>
+    </div>
+
+</div>
+</body>
+</html>
+
