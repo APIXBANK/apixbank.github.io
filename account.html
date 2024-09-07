@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Account - Alessandro Moratti Smith</title>
+    <title>Bank Account - Andree Alessandro Moratti Smith</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,6 +58,31 @@
             color: white;
             border-color: #0056b3;
         }
+        .verified {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .not-verified {
+            display: inline-block;
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .currency-conversion {
+            font-size: 14px;
+            color: #555;
+        }
+        .currency-conversion span {
+            font-weight: bold;
+        }
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -78,17 +103,28 @@
 
     <!-- Stylized title bar -->
     <div class="title-bar">
-        Bank Account - Alessandro Moratti Smith
+        Bank Account - Andree Alessandro Moratti Smith
     </div>
 
     <div class="account-details">
         <h3>Account Details</h3>
 
-        <!-- Details styled as elegant buttons -->
-        <div class="details-button"><strong>Account Holder:</strong> Alessandro Moratti Smith</div>
-        <div class="details-button"><strong>Co-holder:</strong> Danieta Taranto</div>
-        <div class="details-button"><strong>Current Balance:</strong> &euro;3,000,000</div>
-        <div class="details-button"><strong>Blocked Amount:</strong> &euro;1,000,000 blocked with a 12% annual interest rate.</div>
+        <!-- Details styled as elegant buttons with verification statuses -->
+        <div class="details-button">
+            <strong>Account Holder:</strong> Andree Alessandro Moratti Smith 
+            <span class="verified">&#x2714; Document Verified</span> <!-- Green checkmark for verified -->
+        </div>
+        <div class="details-button">
+            <strong>Co-holder:</strong> Danieta Taranto 
+            <span class="not-verified">&#x2716; Not Verified</span> <!-- Red cross for not verified -->
+        </div>
+        <div class="details-button">
+            <strong>Current Balance:</strong> &euro;3,000,000
+            <div class="currency-conversion">Equivalent to <span>&dollar;3,360,000</span></div> <!-- Conversion added -->
+        </div>
+        <div class="details-button">
+            <strong>Blocked Amount:</strong> &euro;1,000,000 blocked with a 12% annual interest rate.
+        </div>
     </div>
 
     <div class="interest-section">
@@ -118,4 +154,3 @@
 </div>
 </body>
 </html>
-
