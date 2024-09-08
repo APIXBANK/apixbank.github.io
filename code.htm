@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e8b57;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .input-container input:focus {
+            border-color: #007bff;
+        }
+        .custom-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .custom-button img {
+            width: 30px;
+            height: 30px;
+        }
+        .custom-button:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Security Code</h1>
+        <p>Please enter the 5-digit code to proceed.</p>
+
+        <!-- Input for the code -->
+        <div class="input-container">
+            <input type="text" maxlength="1" id="code1">
+            <input type="text" maxlength="1" id="code2">
+            <input type="text" maxlength="1" id="code3">
+            <input type="text" maxlength="1" id="code4">
+            <input type="text" maxlength="1" id="code5">
+        </div>
+
+        <!-- Submit button -->
+        <a href="#" class="custom-button" onclick="submitCode()">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/lock.png" alt="Lock Icon">
+            <span>Submit Code</span>
+        </a>
+    </div>
+
+    <script>
+        // Automatically move to the next input field when a digit is entered
+        const inputs = document.querySelectorAll('.input-container input');
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', () => {
+                if (input.value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+        });
+
+        function submitCode() {
+            // Retrieve the code from input fields
+            let code = '';
+            inputs.forEach(input => {
+                code += input.value;
+            });
+
+            // Check if the code is complete (5 digits)
+            if (code.length === 5) {
+                alert('Code submitted: ' + code);
+                // Here you can handle the submitted code (e.g., send to server, verify, etc.)
+            } else {
+                alert('Please enter all 5 digits.');
+            }
+        }
+    </script>
+</body>
+</html>
+
