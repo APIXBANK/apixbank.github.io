@@ -19,51 +19,84 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .credit-card {
-            padding: 20px;
-            background-color: #ffcc00; /* Gold Color for Luxury Feel */
-            color: black;
-            border-radius: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .credit-card h2 {
-            margin: 0 0 20px 0;
-            font-size: 24px;
-        }
-        .credit-card .card-number {
-            font-size: 20px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-        .credit-card .pin {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .credit-card .expiration {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        .credit-card .qr-code {
+        h1 {
             text-align: center;
-            margin-top: 20px;
+            font-size: 36px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #f39c12, #d35400); /* Gold to Orange Gradient */
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(255, 165, 0, 0.5);
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
-        .qr-code canvas {
-            width: 100px;
-            height: 100px;
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-        .transaction-history {
-            margin-top: 20px;
+        .custom-button.mastercard {
+            background: linear-gradient(135deg, #f39c12, #d35400); /* Gold to Orange Gradient */
+            border-radius: 15px;
+            padding: 20px;
+            width: 360px; /* Dimensione aumentata */
+            height: 200px; /* Dimensione aumentata */
+            color: white;
+            text-decoration: none;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: box-shadow 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Bordo luminoso arancione */
         }
-        .transaction-history h3 {
+        .custom-button.mastercard:hover {
+            box-shadow: 0 0 25px rgba(255, 165, 0, 0.8); /* Bordo luminoso più intenso */
+        }
+        .credit-card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }
+        .card-icons {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+        }
+        .chip-icon {
+            width: 50px;
+            height: 50px;
+        }
+        .mastercard-icon {
+            width: 60px;
+            height: 60px;
+        }
+        .card-info {
+            padding: 10px;
+            text-align: right;
+        }
+        .card-number {
+            display: block;
+            font-size: 1.4em;
             margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .card-holder {
+            display: block;
+            font-size: 1.2em;
+            font-weight: bold;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
         table, th, td {
-            border: 1px solid #ddd;
+            border: none;
         }
         th, td {
             padding: 10px;
@@ -71,18 +104,17 @@
         }
         th {
             background-color: #f4f4f4;
-        }
-        /* Stylized title for credit card */
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            color: #ffffff;
-            background-color: #ffcc00; /* Gold Color for Premium Feel */
-            padding: 20px;
-            border-radius: 10px;
             font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+        }
+        .transaction-history tr {
+            background: #ffb74d; /* Light Orange */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .transaction-history tr:hover {
+            background: #ffa726; /* Darker Orange on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slightly more intense shadow on hover */
         }
         .actions {
             text-align: center;
@@ -101,24 +133,30 @@
             background-color: #0056b3;
         }
     </style>
-    <!-- Include the QRCode.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 </head>
 <body>
+
 <div class="container">
     <!-- Stylized title -->
     <h1>APIX Bank Premium Gold Card Unlimited</h1>
 
-    <div class="credit-card">
-        <h2>APIX Bank</h2>
-        <div class="card-number">
-            4832 5678 9012 3456&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <img src="https://krita.altervista.org/wp-content/uploads/2024/08/mastercard.png" alt="MasterCard Logo" width="179" height="117" />
-        </div>
-        <div class="expiration">Expiration Date: 12/2035&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <div class="pin">PIN: 9876&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <div class="pin">CVV: 510 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <div id="qrcode" class="qr-code">&nbsp;</div>
+    <div class="button-container">
+        <!-- Bottone "MasterCard" -->
+        <a href="Code.htm" class="custom-button mastercard">
+            <div class="credit-card-content">
+                <div class="card-icons">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/sim-card-chip.png" alt="Chip Icon" class="chip-icon">
+                    <img src="https://img.icons8.com/color/50/000000/mastercard-logo.png" alt="MasterCard Icon" class="mastercard-icon">
+                </div>
+                <div class="card-info">
+                    <span class="card-number">4832 5678 9012 3456</span>
+                    <span class="card-holder">MasterCard</span>
+                    <div>Expiration Date: 12/2035</div>
+                    <div>PIN: 9876</div>
+                    <div>CVV: 510</div>
+                </div>
+            </div>
+        </a>
     </div>
 
     <div class="transaction-history">
@@ -135,27 +173,27 @@
                 <tr>
                     <td>08/01/2024</td>
                     <td>Payment - Supermarket **Mart</td>
-                    <td>- &euro;150.00</td>
+                    <td>- €150.00</td>
                 </tr>
                 <tr>
                     <td>08/02/2024</td>
                     <td>Payment - Restaurant **Bistro</td>
-                    <td>- &euro;75.00</td>
+                    <td>- €75.00</td>
                 </tr>
                 <tr>
                     <td>08/03/2024</td>
                     <td>Card Reload</td>
-                    <td>+ &euro;500.00</td>
+                    <td>+ €500.00</td>
                 </tr>
                 <tr>
                     <td>08/04/2024</td>
                     <td>Online Purchase - **azon.com</td>
-                    <td>- &euro;200.00</td>
+                    <td>- €200.00</td>
                 </tr>
                 <tr>
                     <td>08/05/2024</td>
                     <td>Payment - Coffee Shop **bucks</td>
-                    <td>- &euro;20.00</td>
+                    <td>- €20.00</td>
                 </tr>
             </tbody>
         </table>
@@ -166,12 +204,5 @@
     </div>
 </div>
 
-<script>
-    // Generate QR code with some sample data (You can replace 'Sample Data' with your own)
-    QRCode.toCanvas(document.getElementById('qrcode'), 'Sample Data', function (error) {
-        if (error) console.error(error);
-        console.log('QR code generated!');
-    });
-</script>
 </body>
 </html>
